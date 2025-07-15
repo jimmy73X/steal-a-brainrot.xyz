@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Steal a Brainrot online - the ultimate multiplayer experience on Roblox and Playhop">
+    <link rel="canonical" href="https://steal-a-brainrot.xyz">
+    <title>Steal a Brainrot - Play Online & Join Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            min-height: 100vh;
+            color: #1d1d1f;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-icon {
+            background: linear-gradient(135deg, #0071e3 0%, #2997ff 100%);
+            border-radius: 14px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .game-container {
+            border-radius: 24px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .game-container:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .forum-card {
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .comment {
+            border-left: 3px solid #0071e3;
+            transition: all 0.2s ease;
+        }
+        
+        .comment:hover {
+            border-left: 3px solid #2997ff;
+            background: #f9f9fb;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #0071e3 0%, #2997ff 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0051b3 0%, #0077ff 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #34c759 0%, #30d158 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #2a9e45 0%, #28b74f 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 199, 89, 0.3);
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .fade-mask {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white py-4 px-6 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="logo text-2xl">
+                <div class="logo-icon">
+                    <i class="fas fa-brain text-white text-xl"></i>
+                </div>
+                <span>Steal a Brainrot</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition">Game Info</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition">Community</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition">Support</a>
+            </nav>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Game Title -->
+        <section class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">STEAL A BRAINROT</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">The ultimate multiplayer experience where strategy meets chaos. Outsmart your opponents and steal their brains in this wildly popular Roblox adventure!</p>
+        </section>
+
+        <!-- Join Game Section -->
+        <section class="mb-16">
+            <div class="game-container p-2">
+                <div class="bg-gray-50 rounded-2xl p-8 flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-8 md:mb-0 md:w-1/2">
+                        <h2 class="text-3xl font-bold mb-4">Join the Adventure on Roblox</h2>
+                        <p class="text-gray-600 mb-6">Experience the full game with millions of players worldwide. Create your avatar, team up with friends, and dominate the leaderboards!</p>
+                        <a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot" target="_blank" class="btn-primary inline-block text-white font-semibold py-3 px-8 rounded-full text-lg">
+                            Play on Roblox <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    <div class="md:w-2/5">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl transform rotate-3"></div>
+                            <img src="https://images.unsplash.com/photo-1638549326476-1d9f0e9d1e1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Steal a Brainrot gameplay" class="relative rounded-2xl shadow-xl w-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Online Game Section -->
+        <section class="mb-16">
+            <div class="game-container">
+                <div class="p-6 bg-gradient-to-r from-blue-50 to-indigo-50">
+                    <h2 class="text-3xl font-bold mb-4 text-center">Play Instantly in Your Browser</h2>
+                    <p class="text-gray-600 text-center mb-6">No downloads required - jump straight into the action with our web version!</p>
+                    
+                    <div class="bg-gray-900 rounded-xl overflow-hidden">
+                        <div class="relative" style="padding-top: 56.25%"> <!-- 16:9 Aspect Ratio -->
+                            <iframe 
+                                src="https://playhop.com/app/447574#app-id=447574&catalog-session-uid=catalog-50442951-6c37-584d-907d-9c071438b7fe-1752543920792-672c&rtx-reqid=12343434947946706315&pos=%7B%22listType%22%3A%22suggested%22%2C%22tabCategory%22%3A%22common%22%7D&redir-data=%7B%22block%22%3A%22suggested%22%2C%22block_index%22%3A1%2C%22card%22%3A%22adaptive_recommended_new%22%2C%22col%22%3A3%2C%22first_screen%22%3A1%2C%22page%22%3A%22main%22%2C%22rn%22%3A390779543%2C%22row%22%3A1%2C%22rtx_reqid%22%3A%2212343434947946706315%22%2C%22same_block_index%22%3A0%2C%22wrapper%22%3A%22grid-list%22%2C%22request_id%22%3A%221752543920519461-5036111700124320516-sge4a2vsbpigjzwo-BAL%22%2C%22games_request_id%22%3A%221752543920502709-5358761535390045397-ikmgghrwyzp2a7j4-BAL%22%2C%22http_ref%22%3A%22https%253A%252F%252Fplayhop.com%252F%22%7D" 
+                                class="absolute top-0 left-0 w-full h-full border-0"
+                                allow="autoplay; fullscreen"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-4">
+                        <div class="flex items-center bg-white py-2 px-4 rounded-full">
+                            <i class="fas fa-keyboard text-blue-500 mr-2"></i>
+                            <span>WASD to Move</span>
+                        </div>
+                        <div class="flex items-center bg-white py-2 px-4 rounded-full">
+                            <i class="fas fa-mouse-pointer text-blue-500 mr-2"></i>
+                            <span>Mouse to Aim</span>
+                        </div>
+                        <div class="flex items-center bg-white py-2 px-4 rounded-full">
+                            <i class="fas fa-mouse text-blue-500 mr-2"></i>
+                            <span>Left Click to Attack</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forum Section -->
+        <section class="mb-16">
+            <div class="forum-card">
+                <div class="p-6 bg-gradient-to-r from-gray-50 to-blue-50 border-b">
+                    <h2 class="text-3xl font-bold mb-2">Community Forum</h2>
+                    <p class="text-gray-600">Share strategies, ask questions, and connect with other players. No registration needed!</p>
+                </div>
+                
+                <!-- Comment Form -->
+                <div class="p-6 border-b">
+                    <form id="commentForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Name (Optional)</label>
+                            <input type="text" id="name" placeholder="Anonymous" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="comment" class="block text-gray-700 mb-2">Your Comment</label>
+                            <textarea id="comment" rows="3" placeholder="Share your thoughts..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-sm text-gray-500"><i class="fas fa-shield-alt mr-1"></i> Automatic profanity filter enabled</p>
+                            <button type="submit" class="btn-secondary text-white font-semibold py-2 px-6 rounded-lg">
+                                Post Comment <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Comments Section -->
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4">Recent Discussions</h3>
+                    
+                    <div id="commentsContainer" class="space-y-6 max-h-[800px] overflow-y-auto scrollbar-hide pb-4 fade-mask">
+                        <!-- Comments will be dynamically added here -->
+                    </div>
+                    
+                    <div class="mt-6 text-center">
+                        <button id="showMoreBtn" class="text-blue-600 font-semibold hover:text-blue-800 transition">
+                            <i class="fas fa-chevron-down mr-2"></i> Show More Comments
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="logo text-2xl mb-4">
+                        <div class="logo-icon">
+                            <i class="fas fa-brain text-white text-xl"></i>
+                        </div>
+                        <span>Steal a Brainrot</span>
+                    </div>
+                    <p class="text-gray-400">The ultimate multiplayer experience where strategy meets chaos.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Game Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Leaderboards</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Play Now</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot" target="_blank" class="text-gray-400 hover:text-white transition">Roblox Version</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web Version</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mobile App</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-discord text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-tiktok text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2023 Steal-a-Brainrot.xyz. All rights reserved. Roblox is a registered trademark of Roblox Corporation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample comments data
+            const sampleComments = [
+                { id: 1, name: "BrainMaster42", content: "Just discovered an amazing strategy for level 7! Always go for the left path first to get the bonus weapon.", timestamp: "2 hours ago", likes: 15, replies: [
+                    { id: 101, name: "NoobSlayer", content: "This actually works! Thanks for the tip!", timestamp: "1 hour ago" },
+                    { id: 102, name: "ProGamer99", content: "I've been using this since beta. Still the best approach.", timestamp: "45 minutes ago" }
+                ]},
+                { id: 2, name: "ZombieHunter", content: "Does anyone know when the next update is coming? I heard there will be new maps!", timestamp: "5 hours ago", likes: 8, replies: [
+                    { id: 201, name: "DevInsider", content: "Can't share too much, but expect something big next month!", timestamp: "3 hours ago" }
+                ]},
+                { id: 3, name: "Anonymous", content: "I love how this game doesn't require high-end hardware. Runs smoothly on my old laptop!", timestamp: "1 day ago", likes: 23, replies: [] },
+                { id: 4, name: "StrategyQueen", content: "Best team composition for survival mode: 2 attackers, 1 healer, and 1 scout. Works every time!", timestamp: "1 day ago", likes: 31, replies: [
+                    { id: 401, name: "SoloPlayer", content: "What if I play solo? Any tips?", timestamp: "22 hours ago" },
+                    { id: 402, name: "StrategyQueen", content: "@SoloPlayer Focus on speed and evasion. Use hit-and-run tactics!", timestamp: "20 hours ago" }
+                ]},
+                { id: 5, name: "GraphicLover", content: "The art style in this game is amazing! Who designed the characters?", timestamp: "2 days ago", likes: 42, replies: [] }
+            ];
+            
+            const commentsContainer = document.getElementById('commentsContainer');
+            const commentForm = document.getElementById('commentForm');
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            let displayedComments = 0;
+            const maxComments = 3; // Only show 3 initially
+            
+            // Bad words filter
+            const badWords = ['idiot', 'stupid', 'moron', 'hate', 'shut up', 'dumb'];
+            
+            function filterBadWords(text) {
+                let filteredText = text;
+                badWords.forEach(word => {
+                    const regex = new RegExp(word, 'gi');
+                    filteredText = filteredText.replace(regex, '***');
+                });
+                return filteredText;
+            }
+            
+            function createCommentElement(comment, isReply = false) {
+                const commentEl = document.createElement('div');
+                commentEl.className = `comment ${isReply ? 'ml-8 mt-4' : ''} p-4 bg-white rounded-lg`;
+                
+                const nameDisplay = comment.name || 'Anonymous';
+                
+                commentEl.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-user text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">${nameDisplay}</h4>
+                                <p class="text-gray-500 text-sm">${comment.timestamp}</p>
+                            </div>
+                        </div>
+                        <button class="text-gray-400 hover:text-blue-500">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <p class="mt-3 text-gray-700">${filterBadWords(comment.content)}</p>
+                    <div class="mt-3 flex items-center">
+                        <button class="flex items-center text-gray-500 hover:text-blue-500 mr-4">
+                            <i class="far fa-thumbs-up mr-1"></i>
+                            <span>${comment.likes || 0}</span>
+                        </button>
+                        <button class="reply-btn flex items-center text-gray-500 hover:text-blue-500">
+                            <i class="far fa-comment mr-1"></i>
+                            <span>Reply</span>
+                        </button>
+                    </div>
+                `;
+                
+                // Add replies if any
+                if (comment.replies && comment.replies.length > 0) {
+                    const repliesContainer = document.createElement('div');
+                    repliesContainer.className = 'mt-4 space-y-4';
+                    
+                    comment.replies.forEach(reply => {
+                        repliesContainer.appendChild(createCommentElement(reply, true));
+                    });
+                    
+                    commentEl.appendChild(repliesContainer);
+                }
+                
+                return commentEl;
+            }
+            
+            function renderComments() {
+                commentsContainer.innerHTML = '';
+                const commentsToShow = sampleComments.slice(0, displayedComments);
+                
+                if (commentsToShow.length === 0) {
+                    commentsContainer.innerHTML = `
+                        <div class="text-center py-8">
+                            <i class="fas fa-comments text-4xl text-gray-300 mb-4"></i>
+                            <p class="text-gray-500">No comments yet. Be the first to share your thoughts!</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                commentsToShow.forEach(comment => {
+                    commentsContainer.appendChild(createCommentElement(comment));
+                });
+                
+                // Show or hide "Show More" button
+                showMoreBtn.style.display = displayedComments < sampleComments.length ? 'block' : 'none';
+            }
+            
+            // Initial render
+            displayedComments = maxComments;
+            renderComments();
+            
+            // Show more comments
+            showMoreBtn.addEventListener('click', () => {
+                displayedComments = sampleComments.length;
+                renderComments();
+            });
+            
+            // Handle new comment submission
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const nameInput = document.getElementById('name');
+                const commentInput = document.getElementById('comment');
+                
+                const name = nameInput.value.trim();
+                const content = commentInput.value.trim();
+                
+                if (!content) return;
+                
+                // Create new comment object
+                const newComment = {
+                    id: Date.now(),
+                    name: name || null,
+                    content: content,
+                    timestamp: "Just now",
+                    likes: 0,
+                    replies: []
+                };
+                
+                // Add to the beginning of comments array
+                sampleComments.unshift(newComment);
+                displayedComments = Math.min(displayedComments + 1, sampleComments.length);
+                
+                // Clear form
+                nameInput.value = '';
+                commentInput.value = '';
+                
+                // Re-render comments
+                renderComments();
+                
+                // Scroll to the new comment
+                commentsContainer.scrollTop = 0;
+            });
+            
+            // Add reply functionality
+            commentsContainer.addEventListener('click', function(e) {
+                if (e.target.closest('.reply-btn')) {
+                    const commentEl = e.target.closest('.comment');
+                    const name = commentEl.querySelector('h4').textContent;
+                    
+                    // Focus on comment form and set placeholder
+                    const commentInput = document.getElementById('comment');
+                    commentInput.placeholder = `Replying to ${name}...`;
+                    commentInput.focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
