@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
      crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-9341704667724928">
     <!-- Google tag (gtag.js) -->
@@ -15,231 +15,385 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play Steal a Brainrot online - the ultimate multiplayer experience on Roblox and Playhop">
-    <link rel="canonical" href="https://steal-a-brainrot.xyz">
-    <title>Steal a Brainrot - Play Online & Join Community</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Play Steal a Brainrot on Roblox! Buy and steal brainrots, generate money, and explore tycoon gameplay. Suitable for all ages!">
+    <meta name="keywords" content="Steal a Brainrot, Roblox games, brainrot simulation, tycoon games, multiplayer gaming, Roblox community, game mechanics, mobile gaming">
+    <link rel="canonical" href="https://steal-a-brainrot.xyz/">
+    <title>Steal a Brainrot - Fun Roblox Simulation Game</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#0071e3',
+                        'apple-gray': '#f5f5f7',
+                        'apple-dark': '#1d1d1f'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
-            min-height: 100vh;
-            color: #1d1d1f;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            line-height: 1.6;
         }
         
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
-        .logo-icon {
-            background: linear-gradient(135deg, #0071e3 0%, #2997ff 100%);
-            border-radius: 14px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .header-bg {
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
         }
         
         .game-container {
-            border-radius: 24px;
-            background: #fff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .game-container:hover {
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
-        }
-        
-        .forum-card {
-            background: #fff;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-        
-        .comment {
-            border-left: 3px solid #0071e3;
-            transition: all 0.2s ease;
-        }
-        
-        .comment:hover {
-            border-left: 3px solid #2997ff;
-            background: #f9f9fb;
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, #0071e3 0%, #2997ff 100%);
+            background: linear-gradient(90deg, #0071e3 0%, #0a84ff 100%);
             transition: all 0.3s ease;
         }
         
         .btn-primary:hover {
-            background: linear-gradient(135deg, #0051b3 0%, #0077ff 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
         }
         
-        .btn-secondary {
-            background: linear-gradient(135deg, #34c759 0%, #30d158 100%);
-            transition: all 0.3s ease;
+        .forum-message {
+            border-left: 4px solid #0071e3;
+            transition: all 0.3s;
+            margin-bottom: 1.5rem;
         }
         
-        .btn-secondary:hover {
-            background: linear-gradient(135deg, #2a9e45 0%, #28b74f 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 199, 89, 0.3);
+        .forum-message:hover {
+            transform: translateX(5px);
+            background-color: #f9f9f9;
         }
         
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
+        .reply-message {
+            border-left: 3px solid #4da6ff;
+            margin-left: 2rem;
+            margin-top: 1rem;
+            background-color: #f8fbff;
         }
         
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        .ad-container {
+            background: linear-gradient(135deg, #f6f9fc 0%, #e6f0ff 100%);
+            border-radius: 16px;
+            min-height: 280px;
         }
         
-        .fade-mask {
-            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        .footer {
+            background: linear-gradient(120deg, #1d1d1f 0%, #000 100%);
+            color: #f5f5f7;
+        }
+        
+        .iframe-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .user-avatar {
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .reply-avatar {
+            width: 40px;
+            height: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-bg {
+                padding: 20px 0;
+            }
+            
+            .game-title {
+                font-size: 1.8rem;
+            }
+            
+            .reply-message {
+                margin-left: 1rem;
+            }
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
-    <!-- Header -->
-    <header class="bg-white py-4 px-6 shadow-sm">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="logo text-2xl">
-                <div class="logo-icon">
-                    <i class="fas fa-brain text-white text-xl"></i>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header class="header-bg py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="bg-white rounded-full p-2 mr-3 shadow-md">
+                        <div class="bg-gradient-to-r from-pink-500 to-orange-400 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <h1 class="text-3xl font-bold">
+                        <span class="logo">Steal a Brainrot</span>
+                    </h1>
                 </div>
-                <span>Steal a Brainrot</span>
+                
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#" class="text-white font-medium hover:underline">Home</a></li>
+                        <li><a href="#" class="text-white font-medium hover:underline">Gameplay</a></li>
+                        <li><a href="#" class="text-white font-medium hover:underline">Community</a></li>
+                        <li><a href="#" class="text-white font-medium hover:underline">Support</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#" class="text-gray-700 hover:text-blue-600 transition">Home</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 transition">Game Info</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 transition">Community</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 transition">Support</a>
-            </nav>
-            <button class="md:hidden text-gray-600">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-4 py-8 max-w-6xl">
-        <!-- Game Title -->
-        <section class="text-center mb-16">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">STEAL A BRAINROT</h1>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">The ultimate multiplayer experience where strategy meets chaos. Outsmart your opponents and steal their brains in this wildly popular Roblox adventure!</p>
-        </section>
-
-        <!-- Join Game Section -->
-        <section class="mb-16">
-            <div class="game-container p-2">
-                <div class="bg-gray-50 rounded-2xl p-8 flex flex-col md:flex-row justify-between items-center">
-                    <div class="mb-8 md:mb-0 md:w-1/2">
-                        <h2 class="text-3xl font-bold mb-4">Join the Adventure on Roblox</h2>
-                        <p class="text-gray-600 mb-6">Experience the full game with millions of players worldwide. Create your avatar, team up with friends, and dominate the leaderboards!</p>
-                        <a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot" target="_blank" class="btn-primary inline-block text-white font-semibold py-3 px-8 rounded-full text-lg">
-                            Play on Roblox <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                    <div class="md:w-2/5">
-                        <div class="relative">
-                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl transform rotate-3"></div>
-                            <img src="https://images.unsplash.com/photo-1638549326476-1d9f0e9d1e1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Steal a Brainrot gameplay" class="relative rounded-2xl shadow-xl w-full">
-                        </div>
-                    </div>
-                </div>
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Game Title Section -->
+        <section class="text-center mb-16 mt-8">
+            <h1 class="game-title text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                Steal a Brainrot - Fun Roblox Simulation Game
+            </h1>
+            
+            <div class="max-w-3xl mx-auto">
+                <p class="text-xl text-gray-600 mb-8">
+                    Join the fun in Steal a Brainrot on Roblox! Buy and steal brainrots, generate money, and explore tycoon gameplay. Suitable for all ages!
+                </p>
+                
+                <a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot" 
+                   class="btn-primary text-white font-bold py-4 px-10 rounded-full inline-block text-lg"
+                   target="_blank">
+                    <i class="fas fa-gamepad mr-2"></i> Play on Roblox Now
+                </a>
             </div>
         </section>
 
-        <!-- Online Game Section -->
-        <section class="mb-16">
-            <div class="game-container">
-                <div class="p-6 bg-gradient-to-r from-blue-50 to-indigo-50">
-                    <h2 class="text-3xl font-bold mb-4 text-center">Play Instantly in Your Browser</h2>
-                    <p class="text-gray-600 text-center mb-6">No downloads required - jump straight into the action with our web version!</p>
-                    
-                    <div class="bg-gray-900 rounded-xl overflow-hidden">
-                        <div class="relative" style="padding-top: 56.25%"> <!-- 16:9 Aspect Ratio -->
-                            <iframe 
-                                src="https://playhop.com/app/447574#app-id=447574&catalog-session-uid=catalog-50442951-6c37-584d-907d-9c071438b7fe-1752543920792-672c&rtx-reqid=12343434947946706315&pos=%7B%22listType%22%3A%22suggested%22%2C%22tabCategory%22%3A%22common%22%7D&redir-data=%7B%22block%22%3A%22suggested%22%2C%22block_index%22%3A1%2C%22card%22%3A%22adaptive_recommended_new%22%2C%22col%22%3A3%2C%22first_screen%22%3A1%2C%22page%22%3A%22main%22%2C%22rn%22%3A390779543%2C%22row%22%3A1%2C%22rtx_reqid%22%3A%2212343434947946706315%22%2C%22same_block_index%22%3A0%2C%22wrapper%22%3A%22grid-list%22%2C%22request_id%22%3A%221752543920519461-5036111700124320516-sge4a2vsbpigjzwo-BAL%22%2C%22games_request_id%22%3A%221752543920502709-5358761535390045397-ikmgghrwyzp2a7j4-BAL%22%2C%22http_ref%22%3A%22https%253A%252F%252Fplayhop.com%252F%22%7D" 
-                                class="absolute top-0 left-0 w-full h-full border-0"
-                                allow="autoplay; fullscreen"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6 flex flex-wrap justify-center gap-4">
-                        <div class="flex items-center bg-white py-2 px-4 rounded-full">
-                            <i class="fas fa-keyboard text-blue-500 mr-2"></i>
-                            <span>WASD to Move</span>
-                        </div>
-                        <div class="flex items-center bg-white py-2 px-4 rounded-full">
-                            <i class="fas fa-mouse-pointer text-blue-500 mr-2"></i>
-                            <span>Mouse to Aim</span>
-                        </div>
-                        <div class="flex items-center bg-white py-2 px-4 rounded-full">
-                            <i class="fas fa-mouse text-blue-500 mr-2"></i>
-                            <span>Left Click to Attack</span>
-                        </div>
-                    </div>
+        <!-- Game Features -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="game-container p-6 text-center">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-users text-blue-600 text-2xl"></i>
                 </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Multiplayer Gaming</h3>
+                <p class="text-gray-600">Play with friends and compete against players worldwide in the ultimate brainrot stealing challenge.</p>
+            </div>
+            
+            <div class="game-container p-6 text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-coins text-green-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Tycoon Gameplay</h3>
+                <p class="text-gray-600">Build your empire, generate money, and become the ultimate brainrot tycoon.</p>
+            </div>
+            
+            <div class="game-container p-6 text-center">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Mobile Gaming</h3>
+                <p class="text-gray-600">Play anytime, anywhere. Fully optimized for mobile devices with cross-platform support.</p>
             </div>
         </section>
 
-        <!-- Forum Section -->
+        <!-- Game Iframe Section -->
         <section class="mb-16">
-            <div class="forum-card">
-                <div class="p-6 bg-gradient-to-r from-gray-50 to-blue-50 border-b">
-                    <h2 class="text-3xl font-bold mb-2">Community Forum</h2>
-                    <p class="text-gray-600">Share strategies, ask questions, and connect with other players. No registration needed!</p>
-                </div>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Play Steal a Brainrot Online</h2>
+            
+            <div class="iframe-container">
+                <iframe src="https://playhop.com/app/447574#app-id=447574&catalog-session-uid=catalog-50442951-6c37-584d-907d-9c071438b7fe-1752543920792-672c&rtx-reqid=12343434947946706315&pos=%7B%22listType%22%3A%22suggested%22%2C%22tabCategory%22%3A%22common%22%7D&redir-data=%7B%22block%22%3A%22suggested%22%2C%22block_index%22%3A1%2C%22card%22%3A%22adaptive_recommended_new%22%2C%22col%22%3A3%2C%22first_screen%22%3A1%2C%22page%22%3A%22main%22%2C%22rn%22%3A390779543%2C%22row%22%3A1%2C%22rtx_reqid%22%3A%2212343434947946706315%22%2C%22same_block_index%22%3A0%2C%22wrapper%22%3A%22grid-list%22%2C%22request_id%22%3A%221752543920519461-5036111700124320516-sge4a2vsbpigjzwo-BAL%22%2C%22games_request_id%22%3A%221752543920502709-5358761535390045397-ikmgghrwyzp2a7j4-BAL%22%2C%22http_ref%22%3A%22https%253A%252F%252Fplayhop.com%252F%22%7D" 
+                        allow="autoplay; fullscreen" 
+                        allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Forum Section - Fixed Layout -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Community Forum</h2>
+            
+            <div class="game-container p-6">
+                <form class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Leave a Comment</h3>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="name">Name (optional)</label>
+                        <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="message">Message*</label>
+                        <textarea id="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary text-white font-bold py-3 px-6 rounded-lg">
+                        <i class="fas fa-paper-plane mr-2"></i> Post Comment
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2">Note: Offensive language will be automatically filtered</p>
+                </form>
                 
-                <!-- Comment Form -->
-                <div class="p-6 border-b">
-                    <form id="commentForm" class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-gray-700 mb-2">Name (Optional)</label>
-                            <input type="text" id="name" placeholder="Anonymous" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="comment" class="block text-gray-700 mb-2">Your Comment</label>
-                            <textarea id="comment" rows="3" placeholder="Share your thoughts..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <p class="text-sm text-gray-500"><i class="fas fa-shield-alt mr-1"></i> Automatic profanity filter enabled</p>
-                            <button type="submit" class="btn-secondary text-white font-semibold py-2 px-6 rounded-lg">
-                                Post Comment <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                
-                <!-- Comments Section -->
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-4">Recent Discussions</h3>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Recent Community Messages</h3>
                     
-                    <div id="commentsContainer" class="space-y-6 max-h-[800px] overflow-y-auto scrollbar-hide pb-4 fade-mask">
-                        <!-- Comments will be dynamically added here -->
+                    <div id="forum-messages" class="space-y-6">
+                        <!-- Message 1 -->
+                        <div class="forum-message bg-white p-5 rounded-lg shadow-sm">
+                            <div class="flex items-start">
+                                <div class="user-avatar mr-4">
+                                    <span class="text-white font-bold">BF</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="font-bold text-gray-800">BrainrotFan99</h4>
+                                        <span class="text-sm text-gray-500">2 hours ago</span>
+                                    </div>
+                                    <p class="text-gray-600 mt-2 mb-3">This game is amazing! Just reached level 50 yesterday. The tycoon mechanics are so addictive!</p>
+                                    <button class="text-blue-500 font-medium text-sm">
+                                        <i class="fas fa-reply mr-1"></i> Reply
+                                    </button>
+                                    
+                                    <!-- Reply 1 -->
+                                    <div class="reply-message bg-gray-50 p-4 rounded-lg mt-4">
+                                        <div class="flex items-start">
+                                            <div class="user-avatar reply-avatar mr-3">
+                                                <span class="text-white font-bold">TM</span>
+                                            </div>
+                                            <div class="flex-1">
+                                                <div class="flex justify-between items-start">
+                                                    <h4 class="font-bold text-gray-800">TycoonMaster</h4>
+                                                    <span class="text-sm text-gray-500">1 hour ago</span>
+                                                </div>
+                                                <p class="text-gray-600 mt-2">Congrats! Any tips for a new player? Just started yesterday.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Reply 2 -->
+                                    <div class="reply-message bg-gray-50 p-4 rounded-lg mt-3">
+                                        <div class="flex items-start">
+                                            <div class="user-avatar reply-avatar mr-3">
+                                                <span class="text-white font-bold">BF</span>
+                                            </div>
+                                            <div class="flex-1">
+                                                <div class="flex justify-between items-start">
+                                                    <h4 class="font-bold text-gray-800">BrainrotFan99</h4>
+                                                    <span class="text-sm text-gray-500">45 mins ago</span>
+                                                </div>
+                                                <p class="text-gray-600 mt-2">Focus on upgrading your generators first. And always keep an eye out for opportunities to steal brainrots from others!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Message 2 -->
+                        <div class="forum-message bg-white p-5 rounded-lg shadow-sm">
+                            <div class="flex items-start">
+                                <div class="user-avatar mr-4">
+                                    <span class="text-white font-bold">RP</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="font-bold text-gray-800">RobloxProGamer</h4>
+                                        <span class="text-sm text-gray-500">5 hours ago</span>
+                                    </div>
+                                    <p class="text-gray-600 mt-2 mb-3">The new update is fantastic! Love the new brainrot designs and the multiplayer features. Keep up the great work devs!</p>
+                                    <button class="text-blue-500 font-medium text-sm">
+                                        <i class="fas fa-reply mr-1"></i> Reply
+                                    </button>
+                                    
+                                    <!-- Reply -->
+                                    <div class="reply-message bg-gray-50 p-4 rounded-lg mt-4">
+                                        <div class="flex items-start">
+                                            <div class="user-avatar reply-avatar mr-3">
+                                                <span class="text-white font-bold">DG</span>
+                                            </div>
+                                            <div class="flex-1">
+                                                <div class="flex justify-between items-start">
+                                                    <h4 class="font-bold text-gray-800">DevGamer</h4>
+                                                    <span class="text-sm text-gray-500">3 hours ago</span>
+                                                </div>
+                                                <p class="text-gray-600 mt-2">Thanks for the feedback! We have more exciting updates planned for next month. Stay tuned!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Message 3 -->
+                        <div class="forum-message bg-white p-5 rounded-lg shadow-sm">
+                            <div class="flex items-start">
+                                <div class="user-avatar mr-4">
+                                    <span class="text-white font-bold">SL</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="font-bold text-gray-800">SimulationLover</h4>
+                                        <span class="text-sm text-gray-500">1 day ago</span>
+                                    </div>
+                                    <p class="text-gray-600 mt-2 mb-3">Does anyone know when the mobile version will be optimized for tablets? Playing on my iPad is a bit glitchy.</p>
+                                    <button class="text-blue-500 font-medium text-sm">
+                                        <i class="fas fa-reply mr-1"></i> Reply
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Message 4 -->
+                        <div class="forum-message bg-white p-5 rounded-lg shadow-sm">
+                            <div class="flex items-start">
+                                <div class="user-avatar mr-4">
+                                    <span class="text-white font-bold">NS</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="font-bold text-gray-800">NewbieStealer</h4>
+                                        <span class="text-sm text-gray-500">2 days ago</span>
+                                    </div>
+                                    <p class="text-gray-600 mt-2 mb-3">Just started playing yesterday and I'm already hooked! Any experienced players want to team up?</p>
+                                    <button class="text-blue-500 font-medium text-sm">
+                                        <i class="fas fa-reply mr-1"></i> Reply
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="mt-6 text-center">
-                        <button id="showMoreBtn" class="text-blue-600 font-semibold hover:text-blue-800 transition">
-                            <i class="fas fa-chevron-down mr-2"></i> Show More Comments
+                    <div class="text-center mt-8">
+                        <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-3 px-8 rounded-lg transition duration-300">
+                            <i class="fas fa-chevron-down mr-2"></i> Load More Comments
                         </button>
                     </div>
                 </div>
@@ -248,222 +402,120 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="footer py-12">
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <div class="logo text-2xl mb-4">
-                        <div class="logo-icon">
-                            <i class="fas fa-brain text-white text-xl"></i>
-                        </div>
-                        <span>Steal a Brainrot</span>
-                    </div>
-                    <p class="text-gray-400">The ultimate multiplayer experience where strategy meets chaos.</p>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Game Guide</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Leaderboards</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Community</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Play Now</h4>
-                    <ul class="space-y-2">
-                        <li><a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot" target="_blank" class="text-gray-400 hover:text-white transition">Roblox Version</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web Version</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mobile App</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <h3 class="text-xl font-bold text-white mb-4">
+                        <span class="logo">Steal a Brainrot</span>
+                    </h3>
+                    <p class="text-gray-400 mb-4">The ultimate Roblox simulation game where you can buy, sell, and steal brainrots in a fun tycoon environment.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-discord text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-tiktok"></i></a>
                     </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Game Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Community</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Copyright</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-gray-400 mt-1 mr-2"></i>
+                            <span class="text-gray-400">support@steal-a-brainrot.xyz</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-gray-400 mt-1 mr-2"></i>
+                            <span class="text-gray-400">www.steal-a-brainrot.xyz</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; 2023 Steal-a-Brainrot.xyz. All rights reserved. Roblox is a registered trademark of Roblox Corporation.</p>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-500">© 2023 Steal a Brainrot.xyz - All Rights Reserved. This site is not affiliated with Roblox Corporation.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Sample comments data
-            const sampleComments = [
-                { id: 1, name: "BrainMaster42", content: "Just discovered an amazing strategy for level 7! Always go for the left path first to get the bonus weapon.", timestamp: "2 hours ago", likes: 15, replies: [
-                    { id: 101, name: "NoobSlayer", content: "This actually works! Thanks for the tip!", timestamp: "1 hour ago" },
-                    { id: 102, name: "ProGamer99", content: "I've been using this since beta. Still the best approach.", timestamp: "45 minutes ago" }
-                ]},
-                { id: 2, name: "ZombieHunter", content: "Does anyone know when the next update is coming? I heard there will be new maps!", timestamp: "5 hours ago", likes: 8, replies: [
-                    { id: 201, name: "DevInsider", content: "Can't share too much, but expect something big next month!", timestamp: "3 hours ago" }
-                ]},
-                { id: 3, name: "Anonymous", content: "I love how this game doesn't require high-end hardware. Runs smoothly on my old laptop!", timestamp: "1 day ago", likes: 23, replies: [] },
-                { id: 4, name: "StrategyQueen", content: "Best team composition for survival mode: 2 attackers, 1 healer, and 1 scout. Works every time!", timestamp: "1 day ago", likes: 31, replies: [
-                    { id: 401, name: "SoloPlayer", content: "What if I play solo? Any tips?", timestamp: "22 hours ago" },
-                    { id: 402, name: "StrategyQueen", content: "@SoloPlayer Focus on speed and evasion. Use hit-and-run tactics!", timestamp: "20 hours ago" }
-                ]},
-                { id: 5, name: "GraphicLover", content: "The art style in this game is amazing! Who designed the characters?", timestamp: "2 days ago", likes: 42, replies: [] }
-            ];
+        // Simple profanity filter and forum functionality
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            const commentsContainer = document.getElementById('commentsContainer');
-            const commentForm = document.getElementById('commentForm');
-            const showMoreBtn = document.getElementById('showMoreBtn');
-            let displayedComments = 0;
-            const maxComments = 3; // Only show 3 initially
+            const nameInput = document.getElementById('name');
+            const messageInput = document.getElementById('message');
+            const name = nameInput.value || "Anonymous";
+            const message = messageInput.value;
             
-            // Bad words filter
-            const badWords = ['idiot', 'stupid', 'moron', 'hate', 'shut up', 'dumb'];
-            
-            function filterBadWords(text) {
-                let filteredText = text;
-                badWords.forEach(word => {
-                    const regex = new RegExp(word, 'gi');
-                    filteredText = filteredText.replace(regex, '***');
-                });
-                return filteredText;
+            if (!message.trim()) {
+                alert('Please enter a message');
+                return;
             }
             
-            function createCommentElement(comment, isReply = false) {
-                const commentEl = document.createElement('div');
-                commentEl.className = `comment ${isReply ? 'ml-8 mt-4' : ''} p-4 bg-white rounded-lg`;
-                
-                const nameDisplay = comment.name || 'Anonymous';
-                
-                commentEl.innerHTML = `
-                    <div class="flex justify-between items-start">
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                                <i class="fas fa-user text-blue-500"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold">${nameDisplay}</h4>
-                                <p class="text-gray-500 text-sm">${comment.timestamp}</p>
-                            </div>
-                        </div>
-                        <button class="text-gray-400 hover:text-blue-500">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </button>
-                    </div>
-                    <p class="mt-3 text-gray-700">${filterBadWords(comment.content)}</p>
-                    <div class="mt-3 flex items-center">
-                        <button class="flex items-center text-gray-500 hover:text-blue-500 mr-4">
-                            <i class="far fa-thumbs-up mr-1"></i>
-                            <span>${comment.likes || 0}</span>
-                        </button>
-                        <button class="reply-btn flex items-center text-gray-500 hover:text-blue-500">
-                            <i class="far fa-comment mr-1"></i>
-                            <span>Reply</span>
-                        </button>
-                    </div>
-                `;
-                
-                // Add replies if any
-                if (comment.replies && comment.replies.length > 0) {
-                    const repliesContainer = document.createElement('div');
-                    repliesContainer.className = 'mt-4 space-y-4';
-                    
-                    comment.replies.forEach(reply => {
-                        repliesContainer.appendChild(createCommentElement(reply, true));
-                    });
-                    
-                    commentEl.appendChild(repliesContainer);
-                }
-                
-                return commentEl;
-            }
+            // List of blocked words
+            const blockedWords = ['idiot', 'stupid', 'hate', 'dumb', 'moron'];
             
-            function renderComments() {
-                commentsContainer.innerHTML = '';
-                const commentsToShow = sampleComments.slice(0, displayedComments);
-                
-                if (commentsToShow.length === 0) {
-                    commentsContainer.innerHTML = `
-                        <div class="text-center py-8">
-                            <i class="fas fa-comments text-4xl text-gray-300 mb-4"></i>
-                            <p class="text-gray-500">No comments yet. Be the first to share your thoughts!</p>
-                        </div>
-                    `;
+            for (let word of blockedWords) {
+                if (message.toLowerCase().includes(word)) {
+                    alert('Your message contains inappropriate language and cannot be posted.');
                     return;
                 }
-                
-                commentsToShow.forEach(comment => {
-                    commentsContainer.appendChild(createCommentElement(comment));
-                });
-                
-                // Show or hide "Show More" button
-                showMoreBtn.style.display = displayedComments < sampleComments.length ? 'block' : 'none';
             }
             
-            // Initial render
-            displayedComments = maxComments;
-            renderComments();
+            // Create new message element
+            const messagesContainer = document.getElementById('forum-messages');
+            const newMessage = document.createElement('div');
+            newMessage.className = 'forum-message bg-white p-5 rounded-lg shadow-sm';
+            newMessage.innerHTML = `
+                <div class="flex items-start">
+                    <div class="user-avatar mr-4">
+                        <span class="text-white font-bold">${name.charAt(0)}</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-gray-800">${name}</h4>
+                            <span class="text-sm text-gray-500">Just now</span>
+                        </div>
+                        <p class="text-gray-600 mt-2 mb-3">${message}</p>
+                        <button class="text-blue-500 font-medium text-sm">
+                            <i class="fas fa-reply mr-1"></i> Reply
+                        </button>
+                    </div>
+                </div>
+            `;
             
-            // Show more comments
-            showMoreBtn.addEventListener('click', () => {
-                displayedComments = sampleComments.length;
-                renderComments();
-            });
+            // Prepend new message to the top
+            messagesContainer.insertBefore(newMessage, messagesContainer.firstChild);
             
-            // Handle new comment submission
-            commentForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const nameInput = document.getElementById('name');
-                const commentInput = document.getElementById('comment');
-                
-                const name = nameInput.value.trim();
-                const content = commentInput.value.trim();
-                
-                if (!content) return;
-                
-                // Create new comment object
-                const newComment = {
-                    id: Date.now(),
-                    name: name || null,
-                    content: content,
-                    timestamp: "Just now",
-                    likes: 0,
-                    replies: []
-                };
-                
-                // Add to the beginning of comments array
-                sampleComments.unshift(newComment);
-                displayedComments = Math.min(displayedComments + 1, sampleComments.length);
-                
-                // Clear form
-                nameInput.value = '';
-                commentInput.value = '';
-                
-                // Re-render comments
-                renderComments();
-                
-                // Scroll to the new comment
-                commentsContainer.scrollTop = 0;
-            });
+            // Clear form
+            nameInput.value = '';
+            messageInput.value = '';
             
-            // Add reply functionality
-            commentsContainer.addEventListener('click', function(e) {
-                if (e.target.closest('.reply-btn')) {
-                    const commentEl = e.target.closest('.comment');
-                    const name = commentEl.querySelector('h4').textContent;
-                    
-                    // Focus on comment form and set placeholder
-                    const commentInput = document.getElementById('comment');
-                    commentInput.placeholder = `Replying to ${name}...`;
-                    commentInput.focus();
-                }
-            });
+            // Scroll to new message
+            newMessage.scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 </body>
