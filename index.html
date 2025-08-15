@@ -15,958 +15,1050 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play Steal a Brainrot on Roblox! Buy and steal brainrots, generate money, and explore tycoon gameplay. Suitable for all ages!">
-    <meta name="keywords" content="Steal a Brainrot, Roblox games, brainrot simulation, tycoon games, multiplayer gaming, Roblox community, game mechanics, mobile gaming">
-    <link rel="canonical" href="https://steal-a-brainrot.xyz/">
     <title>Steal a Brainrot - Fun Roblox Simulation Game</title>
+    <meta name="description" content="Join the fun in Steal a Brainrot on Roblox! Buy and steal brainrots, generate money, and explore tycoon gameplay. Suitable for all ages!">
+    <meta name="keywords" content="Steal a Brainrot, Roblox games, brainrot simulation, tycoon games, multiplayer gaming, Roblox community, game mechanics, mobile gaming">
+    <link rel="canonical" href="https://steal-a-brainrot.xyz">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rubik:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'apple-blue': '#0071e3',
-                        'apple-gray': '#f5f5f7',
-                        'apple-dark': '#1d1d1f'
-                    }
-                }
-            }
-        }
-    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-            color: #333;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
         }
-        
-        .logo {
+
+        h1, h2, h3, h4 {
+            font-family: 'Rubik', sans-serif;
             font-weight: 700;
-            background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
         }
-        
-        .header-bg {
-            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-        }
-        
-        .game-container {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(90deg, #0071e3 0%, #0a84ff 100%);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
-        }
-        
-        .forum-message {
-            border-left: 4px solid #0071e3;
-            transition: all 0.3s;
+
+        h1 {
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
+            color: var(--dark);
         }
-        
-        .forum-message:hover {
-            transform: translateX(5px);
-            background-color: #f9f9f9;
-        }
-        
-        .reply-message {
-            border-left: 3px solid #4da6ff;
-            margin-left: 2rem;
-            margin-top: 1rem;
-            background-color: #f8fbff;
-        }
-        
-        .ad-container {
-            background: linear-gradient(135deg, #f6f9fc 0%, #e6f0ff 100%);
-            border-radius: 16px;
-            min-height: 280px;
-        }
-        
-        .footer {
-            background: linear-gradient(120deg, #1d1d1f 0%, #000 100%);
-            color: #f5f5f7;
-        }
-        
-        .iframe-container {
+
+        h2 {
+            font-size: 2.5rem;
+            margin: 2.5rem 0 1.5rem;
+            color: var(--primary-dark);
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding-bottom: 0.5rem;
         }
-        
-        .iframe-container iframe {
+
+        h2:after {
+            content: '';
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
         }
-        
-        .user-avatar {
-            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-            width: 50px;
-            height: 50px;
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: #7c3aed;
+        }
+
+        .btn-accent {
+            background: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background: #e11d48;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
+            font-size: 1.2rem;
         }
-        
-        .reply-avatar {
-            width: 40px;
-            height: 40px;
-        }
-        
-        @media (max-width: 768px) {
-            .header-bg {
-                padding: 20px 0;
-            }
-            
-            .game-title {
-                font-size: 1.8rem;
-            }
-            
-            .reply-message {
-                margin-left: 1rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header with Logo and Navigation -->
-    <header class="header-bg py-6">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <div class="bg-white rounded-full p-2 mr-3 shadow-md">
-                        <div class="bg-gradient-to-r from-pink-500 to-orange-400 w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fas fa-brain text-white text-xl"></i>
-                        </div>
-                    </div>
-                    <h1 class="text-3xl font-bold">
-                        <span class="logo">Steal a Brainrot</span>
-                    </h1>
-                </div>
-                
-                <nav class="hidden md:block">
-                    <ul class="flex space-x-8">
-                        <li><a href="#" class="text-white font-medium hover:underline">Home</a></li>
-                        <li><a href="#" class="text-white font-medium hover:underline">Gameplay</a></li>
-                        <li><a href="#" class="text-white font-medium hover:underline">Community</a></li>
-                        <li><a href="#" class="text-white font-medium hover:underline">Support</a></li>
-                    </ul>
-                </nav>
-                
-                <button class="md:hidden text-white">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-    </header>
 
-    <main class="container mx-auto px-4 py-8 max-w-6xl">
-        <!-- Game Title Section -->
-        <section class="text-center mb-16 mt-8">
-            <h1 class="game-title text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                Steal a Brainrot - Fun Roblox Simulation Game
-            </h1>
-            
-            <div class="max-w-3xl mx-auto">
-                <p class="text-xl text-gray-600 mb-8">
-                    Join the fun in Steal a Brainrot on Roblox! Buy and steal brainrots, generate money, and explore tycoon gameplay. Suitable for all ages!
-                </p>
-                
-                <a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot" 
-                   class="btn-primary text-white font-bold py-4 px-10 rounded-full inline-block text-lg"
-                   target="_blank">
-                    <i class="fas fa-gamepad mr-2"></i> Play on Roblox Now
-                </a>
-            </div>
-        </section>
-
-        <!-- Game Features -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div class="game-container p-6 text-center">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-users text-blue-600 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Multiplayer Gaming</h3>
-                <p class="text-gray-600">Play with friends and compete against players worldwide in the ultimate brainrot stealing challenge.</p>
-            </div>
-            
-            <div class="game-container p-6 text-center">
-                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-coins text-green-600 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Tycoon Gameplay</h3>
-                <p class="text-gray-600">Build your empire, generate money, and become the ultimate brainrot tycoon.</p>
-            </div>
-            
-            <div class="game-container p-6 text-center">
-                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Mobile Gaming</h3>
-                <p class="text-gray-600">Play anytime, anywhere. Fully optimized for mobile devices with cross-platform support.</p>
-            </div>
-        </section>
-
-        <!-- Game Iframe Section -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Play Steal a Brainrot Online</h2>
-            
-            <div class="iframe-container">
-                <iframe src="https://games.crazygames.com/en_US/steal-brainrot-online/index.html" 
-                        allow="autoplay; fullscreen" 
-                        allowfullscreen></iframe>
-            </div>
-        </section>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Preview Embed Solution</title>
-    <style>
-        /* Add unique namespaces to avoid style conflicts */
-        .game-preview-container {
-            --gp-primary: #2c2c54;
-            --gp-secondary: #40407a;
-            --gp-accent: #00cec9;
-            --gp-text: #ffffff;
-            --gp-bg: #1a1a2e;
-            --gp-card-bg: linear-gradient(145deg, var(--gp-primary), var(--gp-secondary));
-            --gp-overlay: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            --gp-button: linear-gradient(45deg, var(--gp-accent), #0984e3);
-            
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: var(--gp-bg);
-            padding: 20px;
-            border-radius: 10px;
-            box-sizing: border-box;
-            max-width: 1400px;
-            margin: 20px auto;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
         }
-        
-        /* Avoid global style effects */
-        .game-preview-container * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            list-style: none;
+
+        .nav-links a {
             text-decoration: none;
-        }
-        
-        /* Component internal style */
-        .game-preview-container .gp-header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 0 15px;
-        }
-        
-        .game-preview-container .gp-header h2 {
-            font-size: 2.2rem;
-            color: var(--gp-text);
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #00dbde, #fc00ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 10px rgba(0, 200, 255, 0.2);
-        }
-        
-        .game-preview-container .gp-header p {
-            color: #b8c1ec;
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .game-preview-container .gp-games {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        
-        .game-preview-container .gp-game-card {
-            width: calc(25% - 20px); /* 4 per row */
-            min-width: 250px;
-            background: var(--gp-card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
             position: relative;
         }
-        
-        .game-preview-container .gp-game-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+        .nav-links a:hover {
+            color: var(--primary);
         }
-        
-        .game-preview-container .gp-game-link {
-            display: block;
-        }
-        
-        .game-preview-container .gp-image-container {
-            position: relative;
-            height: 180px;
-            overflow: hidden;
-        }
-        
-        .game-preview-container .gp-game-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .game-preview-container .gp-game-card:hover .gp-game-image {
-            transform: scale(1.05);
-        }
-        
-        .game-preview-container .gp-overlay {
+
+        .nav-links a:after {
+            content: '';
             position: absolute;
-            top: 0;
+            bottom: -5px;
             left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
             width: 100%;
-            height: 100%;
-            background: var(--gp-overlay);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
-        
-        .game-preview-container .gp-game-card:hover .gp-overlay {
-            opacity: 1;
-        }
-        
-        .game-preview-container .gp-play-btn {
-            background: var(--gp-button);
-            color: white;
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
             border: none;
-            padding: 10px 25px;
-            font-size: 1rem;
-            border-radius: 50px;
+            font-size: 1.5rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
             display: flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 12px rgba(0, 206, 201, 0.3);
-        }
-        
-        .game-preview-container .gp-play-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 18px rgba(0, 206, 201, 0.5);
-        }
-        
-        .game-preview-container .gp-game-info {
-            padding: 15px;
+            gap: 3rem;
             position: relative;
             z-index: 2;
         }
-        
-        .game-preview-container .gp-game-title {
-            font-size: 1.2rem;
-            color: var(--gp-text);
-            margin-bottom: 10px;
-            font-weight: 600;
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
             display: flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Game Section */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            margin: 0 auto 1rem;
+        }
+
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .game-frame-container {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
             overflow: hidden;
-            text-overflow: ellipsis;
+            margin-bottom: 3rem;
+            position: relative;
         }
-        
-        .game-preview-container .gp-game-title i {
-            color: #ffb142;
-            font-size: 1rem;
-        }
-        
-        .game-preview-container .gp-game-meta {
+
+        .game-frame-header {
             display: flex;
             justify-content: space-between;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 12px;
-            margin-top: 10px;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--primary);
+            color: white;
         }
-        
-        .game-preview-container .gp-game-genre, 
-        .game-preview-container .gp-game-rating {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+
+        .game-frame {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
         }
-        
-        .game-preview-container .gp-game-genre {
-            color: #b8c1ec;
+
+        /* How to Play */
+        .how-to-play {
+            background: #f1f5f9;
         }
-        
-        .game-preview-container .gp-game-rating {
-            color: #ffb142;
+
+        .controls-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .control-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .control-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .control-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .control-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .control-list {
+            list-style: none;
+        }
+
+        .control-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .control-list li i {
+            font-size: 1rem;
+            color: var(--success);
+            margin-top: 0.3rem;
+            margin-bottom: 0;
+        }
+
+        /* Forum Section */
+        .forum-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2.5rem;
+        }
+
+        .forum-posts {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+        }
+
+        .post-form {
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #cbd5e1;
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .posts-container {
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+        .post {
+            background: #f8fafc;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .post-author {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .post-time {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .post-content {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .reply-btn {
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: 500;
+            padding: 0;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 0.3rem;
         }
-        
-        /* Responsive design */
-        @media (max-width: 1200px) {
-            .game-preview-container .gp-game-card {
-                width: calc(33.333% - 20px); /* 3 in a row */
+
+        .reply-form {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f1f5f9;
+            border-radius: var(--radius);
+        }
+
+        .replies {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid #cbd5e1;
+        }
+
+        .forum-info {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            height: fit-content;
+        }
+
+        .info-card {
+            margin-bottom: 2rem;
+        }
+
+        .info-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .info-card ul {
+            list-style: none;
+        }
+
+        .info-card li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .info-card li i {
+            color: var(--success);
+            margin-top: 0.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            gap: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
             }
         }
-        
-        @media (max-width: 900px) {
-            .game-preview-container .gp-game-card {
-                width: calc(50% - 20px); /* 2 in a row */
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .game-preview-container .gp-game-card {
-                width: 100%; /* 1 in a row */
-                max-width: 350px;
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
             }
             
-            .game-preview-container .gp-header h2 {
-                font-size: 1.8rem;
+            .hero-text {
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .forum-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-frame {
+                height: 400px;
             }
         }
-        
-        .game-preview-container .gp-footer-note {
-            text-align: center;
-            margin-top: 25px;
-            color: #b8c1ec;
-            font-size: 0.9rem;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .controls-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .game-frame {
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Original website content -->
-        
-        <!-- Game Preview Component - Copy from here -->
-        <div class="game-preview-container">
-            <div class="gp-header">
-                <h2>Popular game recommendations</h2>
-                <p>Selected 8 popular games, click on the picture to start the game in a new window</p>
-            </div>
-            
-            <div class="gp-games">
-                <!--Game 1 -->
-                <div class="gp-game-card">
-                    <a href="https://screwdom3d.org/" target="_blank" class="gp-game-link">
-                        <div class="gp-image-container">
-                            <img src="https://onlinegamedayday.com/screwdom3d-600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="screwdom3d" class="gp-game-image">
-                            <div class="gp-overlay">
-                                <button class="gp-play-btn">
-                                    <i class="fas fa-play"></i>Play Now
-                                </button>
-                            </div>
-                        </div>
-                        <div class="gp-game-info">
-                            <h3 class="gp-game-title"><i class="fas fa-rocket"></i>Screwdom 3d</h3>
-                            <div class="gp-game-meta">
-                                <span class="gp-game-genre">puzzle | casual</span>
-                                <span class="gp-game-rating">
-                                    <i class="fas fa-star"></i>4.8
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Game 2 -->
-                <div class="gp-game-card">
-                    <a href="https://climbingblock.com/" target="_blank" class="gp-game-link">
-                        <div class="gp-image-container">
-                            <img src="https://onlinegamedayday.com/climbingblock600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="climbingblock" class="gp-game-image">
-                            <div class="gp-overlay">
-                                <button class="gp-play-btn">
-                                    <i class="fas fa-play"></i>Play Now
-                                </button>
-                            </div>
-                        </div>
-                        <div class="gp-game-info">
-                            <h3 class="gp-game-title"><i class="fas fa-hat-wizard"></i>Climbing Block</h3>
-                            <div class="gp-game-meta">
-                                <span class="gp-game-genre">climb | jump</span>
-                                <span class="gp-game-rating">
-                                    <i class="fas fa-star"></i>4.7
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Game 3 -->
-                <div class="gp-game-card">
-                    <a href="https://screamals.com/" target="_blank" class="gp-game-link">
-                        <div class="gp-image-container">
-                            <img src="https://onlinegamedayday.com/screamals600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="screamals" class="gp-game-image">
-                            <div class="gp-overlay">
-                                <button class="gp-play-btn">
-                                    <i class="fas fa-play"></i>Play Now
-                                </button>
-                            </div>
-                        </div>
-                        <div class="gp-game-info">
-                            <h3 class="gp-game-title"><i class="fas fa-car"></i>Screamals</h3>
-                            <div class="gp-game-meta">
-                                <span class="gp-game-genre">casual | sports</span>
-                                <span class="gp-game-rating">
-                                    <i class="fas fa-star"></i>4.9
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Game 4 -->
-                <div class="gp-game-card">
-                    <a href="https://cutinhalf.org/" target="_blank" class="gp-game-link">
-                        <div class="gp-image-container">
-                            <img src="https://onlinegamedayday.com/cutinhalf600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="cutinhalf" class="gp-game-image">
-                            <div class="gp-overlay">
-                                <button class="gp-play-btn">
-                                    <i class="fas fa-play"></i>Play Now
-                                </button>
-                            </div>
-                        </div>
-                        <div class="gp-game-info">
-                            <h3 class="gp-game-title"><i class="fas fa-cube"></i>Cut in Half</h3>
-                            <div class="gp-game-meta">
-                                <span class="gp-game-genre">slice | puzzle</span>
-                                <span class="gp-game-rating">
-                                    <i class="fas fa-star"></i>4.6
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Game 5 -->
-                <div class="gp-game-card">
-                    <a href="https://onlinerobotroyale.com/" target="_blank" class="gp-game-link">
-                        <div class="gp-image-container">
-                            <img src="https://onlinegamedayday.com/onlinerobotroyale600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="onlinerobotroyale" class="gp-game-image">
-                            <div class="gp-overlay">
-                                <button class="gp-play-btn">
-                                    <i class="fas fa-play"></i>Play Now
-                                </button>
-                            </div>
-                        </div>
-                        <div class="gp-game-info">
-                            <h3 class="gp-game-title"><i class="fas fa-user-secret"></i>Online Robot Royale</h3>
-                            <div class="gp-game-meta">
-                                <span class="gp-game-genre">robot | shooting</span>
-                                <span class="gp-game-rating">
-                                    <i class="fas fa-star"></i>4.8
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Game 6 -->
-                <div class="gp-game-card">
-                    <a href="https://craftbrainrot.xyz/" target="_blank" class="gp-game-link">
-                        <div class="gp-image-container">
-                            <img src="https://onlinegamedayday.com/craftbrainrot600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="craftbrainrot" class="gp-game-image">
-                            <div class="gp-overlay">
-                                <button class="gp-play-btn">
-                                    <i class="fas fa-play"></i>Play Now
-                                </button>
-                            </div>
-                        </div>
-                        <div class="gp-game-info">
-                            <h3 class="gp-game-title"><i class="fas fa-futbol"></i>Craft Brainrot</h3>
-                            <div class="gp-game-meta">
-                                <span class="gp-game-genre">puzzle | exercise</span>
-                                <span class="gp-game-rating">
-                                    <i class="fas fa-star"></i>4.7
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Game 7 -->
-                <div class="gp-game-card">
-                    <a href="https://pilesofmahjong.com/" target="_blank" class="gp-game-link">
-                        <div class="gp-image-container">
-                            <img src="https://onlinegamedayday.com/pilesofmahjong600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="piles of mahjong" class="gp-game-image">
-                            <div class="gp-overlay">
-                                <button class="gp-play-btn">
-                                    <i class="fas fa-play"></i>Play Now
-                                </button>
-                            </div>
-                        </div>
-                        <div class="gp-game-info">
-                            <h3 class="gp-game-title"><i class="fas fa-candy-cane"></i>Piles of Pahjong</h3>
-                            <div class="gp-game-meta">
-                                <span class="gp-game-genre">puzzle | casual</span>
-                                <span class="gp-game-rating">
-                                    <i class="fas fa-star"></i>4.5
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Game 8 -->
-                <div class="gp-game-card">
-                    <a href="https://zomblox.xyz/" target="_blank" class="gp-game-link">
-                        <div class="gp-image-container">
-                            <img src="https://onlinegamedayday.com/zomblox600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="zomblox" class="gp-game-image">
-                            <div class="gp-overlay">
-                                <button class="gp-play-btn">
-                                    <i class="fas fa-play"></i>Play Now
-                                </button>
-                            </div>
-                        </div>
-                        <div class="gp-game-info">
-                            <h3 class="gp-game-title"><i class="fas fa-dragon"></i>Zomblox</h3>
-                            <div class="gp-game-meta">
-                                <span class="gp-game-genre">casual | shooting</span>
-                                <span class="gp-game-rating">
-                                    <i class="fas fa-star"></i>4.9
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="gp-footer-note">
-                All games will open in a new window
-            </div>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <span>Steal a Brainrot</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#play">Play Now</a></li>
+                    <li><a href="#how-to-play">How to Play</a></li>
+                    <li><a href="#forum">Community</a></li>
+                    <li><a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot" class="btn btn-secondary">Join on Roblox</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </nav>
         </div>
-        <!-- Game Preview Component - End copying here -->
-        
-        <!-- The original content of the website continues -->
-        </div>
-    </div>
+    </header>
 
-    <!-- Font Awesome Icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        // Add click effects
-        document.querySelectorAll('.gp-game-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                // Preventing a button from being triggered twice when clicked
-                if (e.target.classList.contains('gp-play-btn')) return;
-                
-                const button = this.querySelector('.gp-play-btn');
-                if (button) {
-                    button.classList.add('clicked');
-                    setTimeout(() => {
-                        button.classList.remove('clicked');
-                    }, 300);
-                }
-            });
-        });
-    </script>
-        <!-- Forum Section - Fixed Layout -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Community Forum</h2>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Steal a Brainrot - Fun Roblox Simulation Game</h1>
+                    <p class="hero-description">Join the fun in Steal a Brainrot on Roblox! Buy and steal brainrots, generate money, and explore tycoon gameplay. Suitable for all ages!</p>
+                    <div class="hero-buttons">
+                        <a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot" class="btn btn-secondary">
+                            <i class="fa-brands fa-roblox"></i> Play on Roblox
+                        </a>
+                        <a href="#play" class="btn btn-accent">
+                            <i class="fa-solid fa-play"></i> Play Online
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&w=800" alt="Steal a Brainrot Game Screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="play" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Play Steal a Brainrot Online</h2>
+                <p>Enjoy the game directly in your browser. No downloads required!</p>
+            </div>
             
-            <div class="game-container p-6">
-                <form class="mb-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Leave a Comment</h3>
-                    <div class="mb-4">
-                        <label class="block text-gray-700 mb-2" for="name">Name (optional)</label>
-                        <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700 mb-2" for="message">Message*</label>
-                        <textarea id="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary text-white font-bold py-3 px-6 rounded-lg">
-                        <i class="fas fa-paper-plane mr-2"></i> Post Comment
+            <div class="game-frame-container">
+                <div class="game-frame-header">
+                    <span>Steal a Brainrot - Online Version</span>
+                    <button class="btn btn-outline" onclick="requestFullscreen()">
+                        <i class="fa-solid fa-expand"></i> Fullscreen
                     </button>
-                    <p class="text-sm text-gray-500 mt-2">Note: Offensive language will be automatically filtered</p>
-                </form>
+                </div>
+                <iframe id="gameFrame" src="https://games.crazygames.com/en_US/steal-brainrot-online/index.html" class="game-frame"></iframe>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot" class="btn btn-secondary">
+                    <i class="fa-brands fa-roblox"></i> Play Full Version on Roblox
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section id="how-to-play" class="section how-to-play">
+        <div class="container">
+            <div class="section-title">
+                <h2>How to Play Steal a Brainrot</h2>
+                <p>Master the game with these essential tips and controls</p>
+            </div>
+            
+            <div class="game-description">
+                <p>Steal Brainrot Online is a chaotic multiplayer heist game where you collect and protect rare Brainrot memes like Tralalero Tralala and Cappuccino Assassino. Buy memes from the feed, sneak into rival bases to steal theirs, and defend your own with traps and locks. Use boosters, outbid opponents mid-delivery, and rebirth for bigger bonuses as you climb to meme-collecting supremacy.</p>
                 
-                <div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Recent Community Messages</h3>
-                    
-                    <div id="forum-messages" class="space-y-6">
-                        <!-- Message 1 -->
-                        <div class="forum-message bg-white p-5 rounded-lg shadow-sm">
-                            <div class="flex items-start">
-                                <div class="user-avatar mr-4">
-                                    <span class="text-white font-bold">BF</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-start">
-                                        <h4 class="font-bold text-gray-800">BrainrotFan99</h4>
-                                        <span class="text-sm text-gray-500">2 hours ago</span>
-                                    </div>
-                                    <p class="text-gray-600 mt-2 mb-3">This game is amazing! Just reached level 50 yesterday. The tycoon mechanics are so addictive!</p>
-                                    <button class="text-blue-500 font-medium text-sm">
-                                        <i class="fas fa-reply mr-1"></i> Reply
-                                    </button>
-                                    
-                                    <!-- Reply 1 -->
-                                    <div class="reply-message bg-gray-50 p-4 rounded-lg mt-4">
-                                        <div class="flex items-start">
-                                            <div class="user-avatar reply-avatar mr-3">
-                                                <span class="text-white font-bold">TM</span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <div class="flex justify-between items-start">
-                                                    <h4 class="font-bold text-gray-800">TycoonMaster</h4>
-                                                    <span class="text-sm text-gray-500">1 hour ago</span>
-                                                </div>
-                                                <p class="text-gray-600 mt-2">Congrats! Any tips for a new player? Just started yesterday.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Reply 2 -->
-                                    <div class="reply-message bg-gray-50 p-4 rounded-lg mt-3">
-                                        <div class="flex items-start">
-                                            <div class="user-avatar reply-avatar mr-3">
-                                                <span class="text-white font-bold">BF</span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <div class="flex justify-between items-start">
-                                                    <h4 class="font-bold text-gray-800">BrainrotFan99</h4>
-                                                    <span class="text-sm text-gray-500">45 mins ago</span>
-                                                </div>
-                                                <p class="text-gray-600 mt-2">Focus on upgrading your generators first. And always keep an eye out for opportunities to steal brainrots from others!</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <p>This is an alternative version of the game by the name "Steal a Brainrot" which is on Roblox.</p>
+            </div>
+            
+            <div class="controls-container">
+                <div class="control-card">
+                    <i class="fa-solid fa-computer"></i>
+                    <h3>PC Controls</h3>
+                    <ul class="control-list">
+                        <li><i class="fa-solid fa-check"></i> <strong>WASD</strong> = Move character</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Space</strong> = Jump</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>E</strong> = Interact with objects</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Mouse</strong> = Look around</li>
+                    </ul>
+                </div>
+                
+                <div class="control-card">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h3>Mobile Controls</h3>
+                    <ul class="control-list">
+                        <li><i class="fa-solid fa-check"></i> <strong>Left Joystick</strong> = Move character</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Swipe</strong> = Look around</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Up Arrow</strong> = Jump</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Hand Icon</strong> = Interact</li>
+                    </ul>
+                </div>
+                
+                <div class="control-card">
+                    <i class="fa-solid fa-gear"></i>
+                    <h3>Settings & Tips</h3>
+                    <ul class="control-list">
+                        <li><i class="fa-solid fa-check"></i> Adjust mouse sensitivity in settings</li>
+                        <li><i class="fa-solid fa-check"></i> Modify graphics quality for performance</li>
+                        <li><i class="fa-solid fa-check"></i> Control music and sound volume</li>
+                        <li><i class="fa-solid fa-check"></i> Use traps and locks to protect your memes</li>
+                        <li><i class="fa-solid fa-check"></i> Rebirth for bigger bonuses and advantages</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forum Section -->
+    <section id="forum" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Community Forum</h2>
+                <p>Share your experiences, ask questions, and connect with other players</p>
+            </div>
+            
+            <div class="forum-container">
+                <div class="forum-posts">
+                    <div class="post-form">
+                        <h3>Post a Message</h3>
+                        <form id="messageForm">
+                            <div class="form-group">
+                                <label for="author">Name (optional)</label>
+                                <input type="text" id="author" class="form-control" placeholder="Your name or nickname">
                             </div>
-                        </div>
-                        
-                        <!-- Message 2 -->
-                        <div class="forum-message bg-white p-5 rounded-lg shadow-sm">
-                            <div class="flex items-start">
-                                <div class="user-avatar mr-4">
-                                    <span class="text-white font-bold">RP</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-start">
-                                        <h4 class="font-bold text-gray-800">RobloxProGamer</h4>
-                                        <span class="text-sm text-gray-500">5 hours ago</span>
-                                    </div>
-                                    <p class="text-gray-600 mt-2 mb-3">The new update is fantastic! Love the new brainrot designs and the multiplayer features. Keep up the great work devs!</p>
-                                    <button class="text-blue-500 font-medium text-sm">
-                                        <i class="fas fa-reply mr-1"></i> Reply
-                                    </button>
-                                    
-                                    <!-- Reply -->
-                                    <div class="reply-message bg-gray-50 p-4 rounded-lg mt-4">
-                                        <div class="flex items-start">
-                                            <div class="user-avatar reply-avatar mr-3">
-                                                <span class="text-white font-bold">DG</span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <div class="flex justify-between items-start">
-                                                    <h4 class="font-bold text-gray-800">DevGamer</h4>
-                                                    <span class="text-sm text-gray-500">3 hours ago</span>
-                                                </div>
-                                                <p class="text-gray-600 mt-2">Thanks for the feedback! We have more exciting updates planned for next month. Stay tuned!</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" class="form-control" placeholder="Share your thoughts about the game..." required></textarea>
                             </div>
-                        </div>
-                        
-                        <!-- Message 3 -->
-                        <div class="forum-message bg-white p-5 rounded-lg shadow-sm">
-                            <div class="flex items-start">
-                                <div class="user-avatar mr-4">
-                                    <span class="text-white font-bold">SL</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-start">
-                                        <h4 class="font-bold text-gray-800">SimulationLover</h4>
-                                        <span class="text-sm text-gray-500">1 day ago</span>
-                                    </div>
-                                    <p class="text-gray-600 mt-2 mb-3">Does anyone know when the mobile version will be optimized for tablets? Playing on my iPad is a bit glitchy.</p>
-                                    <button class="text-blue-500 font-medium text-sm">
-                                        <i class="fas fa-reply mr-1"></i> Reply
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Message 4 -->
-                        <div class="forum-message bg-white p-5 rounded-lg shadow-sm">
-                            <div class="flex items-start">
-                                <div class="user-avatar mr-4">
-                                    <span class="text-white font-bold">NS</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-start">
-                                        <h4 class="font-bold text-gray-800">NewbieStealer</h4>
-                                        <span class="text-sm text-gray-500">2 days ago</span>
-                                    </div>
-                                    <p class="text-gray-600 mt-2 mb-3">Just started playing yesterday and I'm already hooked! Any experienced players want to team up?</p>
-                                    <button class="text-blue-500 font-medium text-sm">
-                                        <i class="fas fa-reply mr-1"></i> Reply
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                            <button type="submit" class="btn btn-primary">Post Message</button>
+                        </form>
                     </div>
                     
-                    <div class="text-center mt-8">
-                        <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-3 px-8 rounded-lg transition duration-300">
-                            <i class="fas fa-chevron-down mr-2"></i> Load More Comments
-                        </button>
+                    <div class="posts-container" id="postsContainer">
+                        <!-- Posts will be dynamically added here -->
+                    </div>
+                </div>
+                
+                <div class="forum-info">
+                    <div class="info-card">
+                        <h3>Forum Rules</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-circle-check"></i> Be respectful to other players</li>
+                            <li><i class="fa-solid fa-circle-check"></i> No offensive language</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Keep discussions game-related</li>
+                            <li><i class="fa-solid fa-circle-check"></i> No spamming or advertising</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Have fun and be creative!</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Game Updates</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i> New memes added weekly</li>
+                            <li><i class="fa-solid fa-star"></i> Improved mobile controls</li>
+                            <li><i class="fa-solid fa-star"></i> Performance optimization</li>
+                            <li><i class="fa-solid fa-star"></i> Special holiday events</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-link"></i> <a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot">Official Roblox Game</a></li>
+                            <li><i class="fa-solid fa-link"></i> <a href="#">Game Wiki & Guides</a></li>
+                            <li><i class="fa-solid fa-link"></i> <a href="#">Player Support</a></li>
+                            <li><i class="fa-solid fa-link"></i> <a href="#">Report an Issue</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer py-12">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4">
-                        <span class="logo">Steal a Brainrot</span>
-                    </h3>
-                    <p class="text-gray-400 mb-4">The ultimate Roblox simulation game where you can buy, sell, and steal brainrots in a fun tycoon environment.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-discord"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-tiktok"></i></a>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Steal a Brainrot</h3>
+                    <p>Experience the ultimate meme-collecting heist game on Roblox and in your browser. Join thousands of players worldwide!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
                 
-                <div>
-                    <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Game Features</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Community</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Support</a></li>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#play"><i class="fa-solid fa-chevron-right"></i> Play Online</a></li>
+                        <li><a href="#how-to-play"><i class="fa-solid fa-chevron-right"></i> How to Play</a></li>
+                        <li><a href="#forum"><i class="fa-solid fa-chevron-right"></i> Community</a></li>
+                        <li><a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot"><i class="fa-solid fa-chevron-right"></i> Roblox Version</a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h4 class="text-lg font-bold text-white mb-4">Legal</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Copyright</a></li>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Game Guide</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Meme Collection</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Strategy Tips</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Update Log</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Support Center</a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h4 class="text-lg font-bold text-white mb-4">Contact</h4>
-                    <ul class="space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope text-gray-400 mt-1 mr-2"></i>
-                            <span class="text-gray-400">support@steal-a-brainrot.xyz</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-globe text-gray-400 mt-1 mr-2"></i>
-                            <span class="text-gray-400">www.steal-a-brainrot.xyz</span>
-                        </li>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Terms of Service</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Cookie Policy</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Copyright</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-500">© 2023 Steal a Brainrot.xyz - All Rights Reserved. This site is not affiliated with Roblox Corporation.</p>
+            <div class="copyright">
+                &copy; 2023 Steal-a-Brainrot.xyz. All rights reserved. Roblox and the Roblox logo are registered trademarks of Roblox Corporation.
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple profanity filter and forum functionality
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nameInput = document.getElementById('name');
-            const messageInput = document.getElementById('message');
-            const name = nameInput.value || "Anonymous";
-            const message = messageInput.value;
-            
-            if (!message.trim()) {
-                alert('Please enter a message');
-                return;
+        // Fullscreen functionality
+        function requestFullscreen() {
+            const elem = document.getElementById('gameFrame');
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
             }
-            
-            // List of blocked words
-            const blockedWords = ['idiot', 'stupid', 'hate', 'dumb', 'moron'];
-            
-            for (let word of blockedWords) {
-                if (message.toLowerCase().includes(word)) {
-                    alert('Your message contains inappropriate language and cannot be posted.');
-                    return;
-                }
+        }
+        
+        // Forum functionality
+        const messageForm = document.getElementById('messageForm');
+        const postsContainer = document.getElementById('postsContainer');
+        const badWords = ['stupid', 'idiot', 'hate', 'dumb']; // Simplified bad words list
+        
+        // Sample initial posts
+        const initialPosts = [
+            {
+                author: 'BrainrotLover42',
+                time: '2 hours ago',
+                content: 'Just stole a rare Tralalero Tralala from a level 10 base! The adrenaline rush is real!',
+                replies: [
+                    {
+                        author: 'MemeMaster',
+                        time: '1 hour ago',
+                        content: 'Nice one! What traps did you have to avoid?'
+                    }
+                ]
+            },
+            {
+                author: 'CappuccinoKing',
+                time: '5 hours ago',
+                content: 'Anyone have tips for defending against multiple attackers? My base keeps getting raided.',
+                replies: [
+                    {
+                        author: 'SecurityPro',
+                        time: '3 hours ago',
+                        content: 'Focus on upgrading your locks first. Also, place traps near entry points.'
+                    },
+                    {
+                        author: 'StealthNinja',
+                        time: '2 hours ago',
+                        content: 'Try to be online during peak hours so you can defend in real-time.'
+                    }
+                ]
             }
+        ];
+        
+        // Render initial posts
+        function renderPosts() {
+            postsContainer.innerHTML = '';
+            initialPosts.forEach(post => {
+                addPostToDOM(post);
+            });
+        }
+        
+        // Add post to DOM
+        function addPostToDOM(post) {
+            const postEl = document.createElement('div');
+            postEl.className = 'post';
             
-            // Create new message element
-            const messagesContainer = document.getElementById('forum-messages');
-            const newMessage = document.createElement('div');
-            newMessage.className = 'forum-message bg-white p-5 rounded-lg shadow-sm';
-            newMessage.innerHTML = `
-                <div class="flex items-start">
-                    <div class="user-avatar mr-4">
-                        <span class="text-white font-bold">${name.charAt(0)}</span>
-                    </div>
-                    <div class="flex-1">
-                        <div class="flex justify-between items-start">
-                            <h4 class="font-bold text-gray-800">${name}</h4>
-                            <span class="text-sm text-gray-500">Just now</span>
-                        </div>
-                        <p class="text-gray-600 mt-2 mb-3">${message}</p>
-                        <button class="text-blue-500 font-medium text-sm">
-                            <i class="fas fa-reply mr-1"></i> Reply
-                        </button>
-                    </div>
+            // Format time
+            const formattedTime = post.time || new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            
+            postEl.innerHTML = `
+                <div class="post-header">
+                    <div class="post-author">${post.author || 'Anonymous'}</div>
+                    <div class="post-time">${formattedTime}</div>
+                </div>
+                <div class="post-content">
+                    ${filterBadWords(post.content)}
+                </div>
+                <div class="post-actions">
+                    <button class="reply-btn">
+                        <i class="fa-solid fa-reply"></i> Reply
+                    </button>
                 </div>
             `;
             
-            // Prepend new message to the top
-            messagesContainer.insertBefore(newMessage, messagesContainer.firstChild);
+            // Add replies if any
+            if (post.replies && post.replies.length > 0) {
+                const repliesEl = document.createElement('div');
+                repliesEl.className = 'replies';
+                
+                post.replies.forEach(reply => {
+                    const replyEl = document.createElement('div');
+                    replyEl.className = 'post';
+                    replyEl.innerHTML = `
+                        <div class="post-header">
+                            <div class="post-author">${reply.author || 'Anonymous'}</div>
+                            <div class="post-time">${reply.time || 'Just now'}</div>
+                        </div>
+                        <div class="post-content">
+                            ${filterBadWords(reply.content)}
+                        </div>
+                    `;
+                    repliesEl.appendChild(replyEl);
+                });
+                
+                postEl.appendChild(repliesEl);
+            }
             
-            // Clear form
-            nameInput.value = '';
-            messageInput.value = '';
+            postsContainer.prepend(postEl);
+        }
+        
+        // Filter bad words
+        function filterBadWords(text) {
+            badWords.forEach(word => {
+                const regex = new RegExp(word, 'gi');
+                text = text.replace(regex, '*'.repeat(word.length));
+            });
+            return text;
+        }
+        
+        // Handle form submission
+        messageForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Scroll to new message
-            newMessage.scrollIntoView({ behavior: 'smooth' });
+            const author = document.getElementById('author').value || 'Anonymous';
+            const message = document.getElementById('message').value;
+            
+            if (message.trim() !== '') {
+                const newPost = {
+                    author: author,
+                    content: message,
+                    time: 'Just now'
+                };
+                
+                addPostToDOM(newPost);
+                messageForm.reset();
+                
+                // Scroll to new post
+                postsContainer.scrollTop = 0;
+            }
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPosts();
         });
     </script>
 </body>
